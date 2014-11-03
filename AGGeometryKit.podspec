@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = "AGGeometryKit"
-    s.version      = "1.0.4"
+    s.version      = "1.0.5"
     s.summary      = "Quadrilaterals on CALayer, CGGeometry-functions, UIView/CALayer properties and other invaluable tools."
     s.homepage     = "https://github.com/hfossli/AGGeometryKit"
     s.license      = 'MIT'
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
     	"Logan Holmes"  => "snown27@gmail.com"
     	}
     s.source       = { 
-        :git => "https://github.com/hfossli/AGGeometryKit.git",  
+        :git => "https://github.com/rulien/AGGeometryKit.git",  
         :tag => s.version.to_s
         }
         
@@ -21,6 +21,11 @@ Pod::Spec.new do |s|
     s.subspec 'Default' do |ss|
         ss.dependency      'AGGeometryKit/Core'
         ss.dependency      'AGGeometryKit/Dependencies'
+    end
+    
+    s.subspec 'FrameManipulation' do |ss|
+        ss.source_files        = 'Source/CoreGraphics_Extensions/*.{h,m}', 'Source/Categories/UIView+AGK+Properties.{h,m}', 'Source/AGKMath.{h,m}', 'Source/Classes/AGKTransformPixelMapper.{h,m}'
+        ss.exclude_files       = 'Source/**/*Test.{h,m}'  
     end
 
     s.subspec 'Dependencies' do |ss|
